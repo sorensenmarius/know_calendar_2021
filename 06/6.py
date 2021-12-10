@@ -1,7 +1,6 @@
 import requests
 import numpy as np
 from math import ceil, floor
-
 any = np.any
 
 gifts = requests.get('https://julekalender-backend.knowit.no/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBallDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--20b29549a475416a15aa81ff11b00da4c4103e67/pakker.txt?disposition=inline').text.splitlines()
@@ -30,6 +29,4 @@ for gift in gifts:
             grid[r, whole_gift] = 1
             break
 
-
-print(grid)
-print(fallen_counter)
+print(f"{fallen_counter} packages fell down")
